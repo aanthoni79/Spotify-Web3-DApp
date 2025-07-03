@@ -13,7 +13,7 @@ function App() {
   const getAllWaves = async () => {
     try{
       if(window.ethereum) {
-        const provider = new ethers.providers.Web3Provider(ethereum);
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
         const signer = provider.getSigner();
         const spotifyContract = new ethers.Contract(contractAddress, spotify.abi, signer);
     
@@ -87,7 +87,7 @@ function App() {
   const wave = async() => {
     try{
       if(window.ethereum) {
-      const provider = new ethers.providers.Web3Provider(ethereum);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const spotifyContract = new ethers.Contract(contractAddress, spotify.abi, signer);
 
